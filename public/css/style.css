@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open sans', sans-serif;
+    box-sizing: border-box;
+}
+
+footer {
+    text-align: center;
+    bottom: 0px;
+}
+
+.intro {
+    width: 100%;
+    margin: 0px auto 40px;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+
+.intro ul {
+    display: inline-block;
+    width: 100%;
+    list-style-type: none;
+    background-color: #0F2027;
+    background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
+}
+
+.intro li {
+    float: left;
+    width: 19%;
+    text-align: center;
+}
+
+.intro a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+.intro a:hover {
+    color: orange;
+    border-bottom: 2px solid orange;
+    text-decoration: none;
+}
+
+img {
+    height: 30%;
+    width: 30%;
+    margin-left: 32%;
+}
+
+.img {
+    width: 3%;
+    height: 3%;
+    margin-left: 0%;
+}
+
+#burger {
+    display: none;
+    width: 0px;
+}
+
+#carre {
+    width: 50px;
+    height: 50px;
+    background-color: #0F2027;
+    background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027);
+}
+
+#carre:hover {
+    color: orange;
+    border-bottom: 2px solid orange;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: orange;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+    /* Le menu disparait*/
+    .intro ul {
+        display: none;
+        width: 0px;
+    }
+    /* le burger apparait*/
+    #burger {
+        display: inline;
+        text-decoration: none;
+        color: white;
+        border-bottom: 2px solid transparent;
+    }
+    nav.ouvreMenu ul {
+        display: block;
+        width: 100%;
+    }
+    nav.fermeMenu li {
+        display: none;
+        width: 0%;
+    }
+    #menu {
+        padding-top: 12px;
+    }
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.titre }}{% endblock %}
+
+{% block body %}
+<div style='margin-left: 10%'>
+    <h2>{{ article.titre }}</h2>
+    <p>Ecrit par: {{ article.pseudo }} - Commentaires : {{ article.commentaires|length }}</p>
+    {# <img src="{{ vich_uploader_asset(article, 'imageFile')|imagine_filter('article')  }}" alt=""> #}
+    <div>{{ article.contenu|raw }}</div>
+
+    <p>Catégories : 
+        {% for categorie in article.categories %}
+            {{ categorie.nom }} 
+        {% endfor %}
+    </p>
+
+    <h2>{% trans %}Commentaire{% endtrans %}</h2>
+    {% for commentaire in article.commentaires %}
+        <p>{% trans %}Publié par{% endtrans %} {{ commentaire.pseudo }}</p>
+        <p>{{ commentaire.contenu }}</p>
+    {% else %}
+        <p>{% trans %}Il n'y a pas encore de commentaires{% endtrans %}</p>
+    {% endfor %}
+    </div>
+    <h2 style='text-align:center'>Ajouter un commentaires</h2>
+     <div style='width:50%; text-align:center; margin-left: 25%'>
+    {{ form(formComment) }}
+    </div>
+{% endblock %}

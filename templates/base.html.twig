@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{asset('css/style.css')}}" rel="stylesheet">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        {% block stylesheet %} {% endblock %}
+        <title>{% block title %}Welcome!{% endblock %}</title>
+       
+    </head>
+    <body>
+        <nav class="intro" id="monNav" style='text-align:center'>
+        <a href="#" id="burger" onclick="afficheMenu()"><div id="carre"><div id="menu">Menu</div></div></a>
+            <ul>
+                <li><a href="{{ path('accueil') }}">Home</a></li>
+                <li><a href="{{ path('actualites_articles') }}">Listes des Posts</a></li>
+                <li><a href="{{ path('actualites_ajout_article') }}">Ecrire un post</a></li>
+                <li><a href="http://localhost/SONDAGE/">Sondage</a></li>
+                <li><a href="http://localhost:3000" target="_blank">Crypto Chat</a></li>
+            </ul>
+        </nav>
+           <h1 style='text-align:center'><a href="{{ path('accueil') }}" style="text-decoration: none;color:black;">Crypto blog</a><img src="/image/bitcoin.png" class="img"></h1>
+        {% block body %}{% endblock %}
+        <footer>
+            <a href="https://loic-brachet.fr/">Curriculum vitae</a>
+        </footer>
+        {% block javascript %}{% endblock %}
+        <script src="{{asset('css/MyScript.js')}}"></script>
+    </body>
+</html>
